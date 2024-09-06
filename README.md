@@ -2,6 +2,16 @@
 
 ![image info](https://img.freepik.com/free-vector/simple-vibing-cat-square-meme_742173-4493.jpg)
 
+# General TODO
+- [ ] Features
+  - [ ] Add Lombok
+  - [ ] Add Swagger
+
+- [x] I am done goal example
+  - [x] I am done sub-goal example
+
+<br>
+
 ## Description
 Tool to generate files (for example cv) based on user input.
 
@@ -19,9 +29,28 @@ Tool to generate files (for example cv) based on user input.
 
 * [Tools](#tools)
 
+# Backend
+
+## API Instructions
+### REST
+GET Request Example:
+```bash
+curl -X GET http://localhost:8080/api/example
+```
+
+POST Request Example:
+```bash
+curl -X POST http://localhost:8080/api/example -H "Content-Type: application/json" -d "{\"name\": \"Lotad\", \"height\": 5, \"weight\": 10}"
+```
+
+DELETE Request Example:
+```bash
+curl -X DELETE http://localhost:8080/api/example/{id}
+```
+
 <br>
 
-# Backend
+---
 
 ## Login
 **Description:**  
@@ -100,6 +129,35 @@ Streams are a sequence of elements from a data source that supports functional-s
 - Keycloak
 - [PlantUML](https://plantuml.com/en-dark/) 
 - Junit
+
+# Example Project Structure
+```text
+src
+├── main
+│   ├── java
+│   │   └── com.example.chatapp
+│   │       ├── config
+│   │       ├── controller
+│   │       ├── model
+│   │       ├── repository
+│   │       ├── service
+│   │       └── ChatApplication.java
+│   ├── resources
+│   │   ├── static
+│   │   ├── templates
+│   │   ├── application.properties
+│   │   └── application-dev.properties
+│   └── webapp
+│       └── WEB-INF
+│           └── thymeleaf
+│               └── *.html
+└── test
+    └── java
+        └── com.example.chatapp
+            ├── controller
+            ├── service
+            └── ChatApplicationTests.java
+```
 
 <!-- CONTENT EXAMPLE 
 *Title*
