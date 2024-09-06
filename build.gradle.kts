@@ -24,7 +24,6 @@ repositories {
 }
 
 dependencies {
-
 	// UTILITY
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	developmentOnly("org.springframework.boot:spring-boot-devtools")
@@ -32,7 +31,12 @@ dependencies {
 	annotationProcessor("org.projectlombok:lombok")
 
 	// DATA STORAGE
+	implementation("org.springframework.data:spring-data-jpa")
+	// Temporarily using H2 for testing purposes
+	testImplementation("com.h2database:h2")
 
+	// DOCUMENTATION
+	implementation("net.sourceforge.plantuml:plantuml")
 
 	// TESTING
 	testImplementation("org.springframework.boot:spring-boot-starter-test")

@@ -1,0 +1,50 @@
+@startuml
+
+entity cv {
+    *id : long
+    --
+    first_name : varchar(255)
+    last_name : varchar(255)
+    phonenumber : varchar(255)
+    email_address : varchar(255)
+    home_address : varchar(255)
+    title : varchar(255)
+    links : varchar(255)
+    picture : varchar(255)
+    about_me : text
+    skills : text
+    education : text
+    employment_history : text
+    languages : text
+    certificates : text
+    hobbies : text
+    projects : text
+    publications : text
+    awards : text
+    references : text
+    --
+    theme_id : int <<FK>>  -- Foreign key to theme
+    address_id : int <<FK>>  -- Foreign key to address
+}
+
+entity theme {
+    *id : long
+    --
+    name : varchar(255)
+    file_name : varchar(255)
+}
+
+entity address {
+    *id : int
+    --
+    address : string
+    city : string
+    state : string (optional)
+    country : string
+    postalcode : string
+}
+
+cv ||--|| theme : "1 to 1"
+cv ||--|| address : "1 to 1"
+
+@enduml

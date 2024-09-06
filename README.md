@@ -1,4 +1,6 @@
-# Template Engine
+# Welcome to the Template Engine
+
+![image info](https://img.freepik.com/free-vector/simple-vibing-cat-square-meme_742173-4493.jpg)
 
 ## Description
 Tool to generate files (for example cv) based on user input.
@@ -97,6 +99,7 @@ Streams are a sequence of elements from a data source that supports functional-s
 - Figma
 - Keycloak
 - [PlantUML](https://plantuml.com/en-dark/) 
+- Junit
 
 <!-- CONTENT EXAMPLE 
 *Title*
