@@ -36,7 +36,7 @@ dependencies {
 	testImplementation("com.h2database:h2")
 
 	// DOCUMENTATION
-	implementation("net.sourceforge.plantuml:plantuml")
+	implementation("net.sourceforge.plantuml:plantuml:8059")
 
 	// TESTING
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
