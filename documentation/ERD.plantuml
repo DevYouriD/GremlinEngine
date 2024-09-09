@@ -37,7 +37,7 @@ entity theme {
 entity address {
     *id : int
     --
-    address : string
+    street : string
     city : string
     state : string (optional)
     country : string
