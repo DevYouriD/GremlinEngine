@@ -1,0 +1,41 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: Gremlin Engine
+
+  security:
+    oauth2:
+      resourceserver:
+        oauth2:
+          resourceserver:
+            jwt:
+              issuer-uri: http://localhost:8080/realms/gremlin-engine
+              jwk-set-uri: ${spring.security.oauth2.resourceserver.jwt.issuer-uri}/protocol/openid-connect/certs
+              auth:
+                converter:
+                  resource-id: gremlin-engine-app
+                  principal-attribute: principal_username
+
+logging:
+  level:
+    org:
+      springframework:
+        security: DEBUG
+        boot: INFO
+
+management:
+  endpoint:
+    health:
+      probes:
+        enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  health:
+    livenessstate:
+      enabled: true
+    readinessstate:
+      enabled: true
