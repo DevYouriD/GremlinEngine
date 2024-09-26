@@ -32,20 +32,25 @@ Tool to generate files (for example cv) based on user input.
 # Backend
 
 ## API Instructions
-### REST
-GET Request Example:
+### Example Curls
+GET All Entities:
 ```bash
-curl -X GET http://localhost:8080/api/example
+curl -X GET http://localhost:8080/api/get-all-cv
 ```
 
-POST Request Example:
+GET Entity by ID:
 ```bash
-curl -X POST http://localhost:8080/api/example -H "Content-Type: application/json" -d "{\"name\": \"Lotad\", \"height\": 5, \"weight\": 10}"
+curl -X GET http://localhost:8080/api/get-cv/1
 ```
 
-DELETE Request Example:
+POST Entity:
 ```bash
-curl -X DELETE http://localhost:8080/api/example/{id}
+curl -X POST http://localhost:8080/api/create-cv -H "Content-Type: application/json" -d "{\"firstName\": \"Ketrina\", \"lastName\": \"Gjini\"}"
+```
+
+DELETE Entity by ID:
+```bash
+curl -X DELETE http://localhost:8080/api/delete-cv/1
 ```
 
 <br>
