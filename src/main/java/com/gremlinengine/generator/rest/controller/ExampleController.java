@@ -1,15 +1,26 @@
 package com.gremlinengine.generator.rest.controller;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController
+@RestController("/api")
 public class ExampleController {
 
     // EXAMPLE CONTROLLER
-    @GetMapping("/")
-    public String index(){
-        return "Hello Youri!";
+    @GetMapping("/hello")
+    public ResponseEntity<String> sayHello() {
+        return ResponseEntity.ok("Hello");
+    }
+
+    @GetMapping("/admin")
+    public ResponseEntity<String> sayHelloToAdmin() {
+        return ResponseEntity.ok("Hello Admin");
+    }
+
+    @GetMapping("/user")
+    public ResponseEntity<String> sayHelloToUser() {
+        return ResponseEntity.ok("Hello User");
     }
 
 }
