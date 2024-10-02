@@ -35,8 +35,8 @@ dependencies {
 	implementation("org.springframework.security:spring-security-config")
 	implementation("org.springframework.security:spring-security-core")
 	implementation("org.springframework.security:spring-security-oauth2-client")
-	implementation("org.springframework.security:spring-security-oauth2-resource-server:5.7.0")
-	implementation("org.springframework.security:spring-security-oauth2-jose:5.7.0")
+	implementation("org.springframework.security:spring-security-oauth2-resource-server")
+	implementation("org.springframework.security:spring-security-oauth2-jose")
 
 	// DATA STORAGE
 	implementation("org.springframework.data:spring-data-jpa")
