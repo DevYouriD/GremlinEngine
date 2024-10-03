@@ -26,6 +26,7 @@ repositories {
 dependencies {
 	// UTILITY
 	implementation("org.springframework.boot:spring-boot-starter-web")
+	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 	developmentOnly("org.springframework.boot:spring-boot-devtools")
 	compileOnly("org.projectlombok:lombok")
 	annotationProcessor("org.projectlombok:lombok")
@@ -39,9 +40,8 @@ dependencies {
 	implementation("org.springframework.security:spring-security-oauth2-jose")
 
 	// DATA STORAGE
-	implementation("org.springframework.data:spring-data-jpa")
 	// Temporarily using H2 for testing purposes
-	testImplementation("com.h2database:h2")
+	runtimeOnly("com.h2database:h2")
 
 	// DOCUMENTATION
 	implementation("net.sourceforge.plantuml:plantuml:8059")
