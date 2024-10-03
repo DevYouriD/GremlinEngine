@@ -21,8 +21,6 @@
 - [x] I am done goal example
   - [x] I am done sub-goal example
 
-<br>
-
 ## Description
 Tool to generate files (for example cv) based on user input.
 
