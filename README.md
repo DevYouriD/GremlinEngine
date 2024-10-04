@@ -144,6 +144,13 @@ Streams are a sequence of elements from a data source that supports functional-s
 - [PlantUML](https://plantuml.com/en-dark/) 
 - Junit
 
+# Git Strategy (Git Flow)
+**Why Git Flow**  
+We chose the Git Flow strategy because it is easy to use, easy to understand and fits perfect with 
+the smaller scope of this project.
+
+![image info](https://miro.medium.com/v2/resize:fit:1400/1*3-0EDzE63S_UZx2KbIz_dg.png)
+
 # Example Project Structure
 ```text
 src

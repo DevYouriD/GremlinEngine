@@ -5,7 +5,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import com.gremlinengine.generator.rest.model.Cv;
 import com.gremlinengine.generator.rest.service.CvService;
-import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
