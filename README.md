@@ -5,20 +5,6 @@
   - [ ] Figure out how keycloak works
   - [ ] Figure out how to implement
   - [ ] Figure out what (and what else) we can do with it
-  
-- [x] Set up keycloak
-  - [x] Created new realm gremlin-engine
-  - [x] Created client for realm gremlin-engine-app
-  - [x] Created two roles for client-realm: admin & user
-  - [x] Created two test users: user1& user2 with password 12345
-
-- [x] Set up spring security and JWT Converter
-  - [x] Created 3 test controller endpoints
-  - [x] Added Spring Security configuration for the 3 test endpoints
-  - [x] Updated properties file with configuration for keycloak
-  - [x] Created two classes for JWT Conversion
-
-
 
 <br>
 
