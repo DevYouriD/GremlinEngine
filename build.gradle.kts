@@ -32,12 +32,12 @@ dependencies {
 	annotationProcessor("org.projectlombok:lombok")
 
 	// SECURITY
-	implementation ("org.springframework.boot:spring-boot-starter-security")
-	implementation("org.springframework.security:spring-security-config")
-	implementation("org.springframework.security:spring-security-core")
-	implementation("org.springframework.security:spring-security-oauth2-client")
-	implementation("org.springframework.security:spring-security-oauth2-resource-server")
-	implementation("org.springframework.security:spring-security-oauth2-jose")
+//	implementation ("org.springframework.boot:spring-boot-starter-security")
+//	implementation("org.springframework.security:spring-security-config")
+//	implementation("org.springframework.security:spring-security-core")
+//	implementation("org.springframework.security:spring-security-oauth2-client")
+//	implementation("org.springframework.security:spring-security-oauth2-resource-server")
+//	implementation("org.springframework.security:spring-security-oauth2-jose")
 
 	// DATA STORAGE
 	// Temporarily using H2 for testing purposes
