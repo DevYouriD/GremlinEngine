@@ -8,6 +8,7 @@ class GremlinEngineApplicationTests {
 
 	@Test
 	void contextLoads() {
+		// Check if the spring boot context loads.
 	}
 
 }

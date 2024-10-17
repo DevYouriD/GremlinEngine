@@ -2,13 +2,12 @@
 
 # Keycloak TODO
 - [ ] Features
-  - [ ] Figure out how keycloak works
-  - [ ] Figure out how to implement
+  - [x] Figure out how keycloak works
+  - [x] Figure out how to implement
+  - [x] Write configuration 
   - [ ] Figure out what (and what else) we can do with it
-
-<br>
-
-![image info](https://img.freepik.com/free-vector/simple-vibing-cat-square-meme_742173-4493.jpg)
+  - [ ] Enable Keycloak again
+  - [ ] Write tests
 
 # General TODO
 - [ ] Features
@@ -24,10 +23,13 @@ Tool to generate files (for example cv) based on user input.
 ## Index
 
 * [Backend](#backend)
+  * [Functional](#functional) 
     * [Login](#login)
     * [File generating](#file-generating)
     * [Downloadable content](#downloadable-content)
     * [Security](#security)
+  * [Optimization](#optimization)
+    * [Code Quality](#login)
 
 * [Frontend](#frontend)
     * [Design](#design)
@@ -36,6 +38,10 @@ Tool to generate files (for example cv) based on user input.
 * [Tools](#tools)
 
 # Backend
+
+## Functional
+
+---
 
 ## API Instructions
 ### Example Curls
@@ -108,6 +114,10 @@ Streams are a sequence of elements from a data source that supports functional-s
 
 **Links:**  
 [Link](https://www.google.com)
+
+---
+
+## Optimization
 
 ---
 
@@ -199,3 +209,5 @@ Cloud
     AWS
 
  -->
+
+![image info](https://img.freepik.com/free-vector/simple-vibing-cat-square-meme_742173-4493.jpg)

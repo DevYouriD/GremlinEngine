@@ -19,5 +19,4 @@ public class Address {
     private @Getter @Setter String country;
     private @Getter @Setter String postalCode;
 
-
 }
