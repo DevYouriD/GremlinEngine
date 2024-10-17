@@ -27,6 +27,8 @@ dependencies {
 	// UTILITY
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+	implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.6.0")
+	implementation("org.hibernate.validator:hibernate-validator")
 	developmentOnly("org.springframework.boot:spring-boot-devtools")
 	compileOnly("org.projectlombok:lombok")
 	annotationProcessor("org.projectlombok:lombok")

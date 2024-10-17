@@ -44,7 +44,7 @@ entity address {
     postalcode : string
 }
 
-cv ||--|| theme : "1 to 1"
+cv ||--o{ theme : "1 to many"
 cv ||--|| address : "1 to 1"
 
 @enduml
