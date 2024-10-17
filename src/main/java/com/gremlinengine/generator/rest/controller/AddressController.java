@@ -14,6 +14,12 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.util.Optional;
 
+import static com.gremlinengine.generator.rest.utility.Paths.CREATE_ADDRESS;
+import static com.gremlinengine.generator.rest.utility.Paths.DELETE_ADDRESS;
+import static com.gremlinengine.generator.rest.utility.Paths.DELETE_CV;
+import static com.gremlinengine.generator.rest.utility.Paths.GET_ALL_ADDRESS;
+import static com.gremlinengine.generator.rest.utility.Paths.GET_CV_ADDRESS_ID;
+
 @RestController()
 public class AddressController {
 
@@ -24,7 +30,7 @@ public class AddressController {
     }
     
     // CREATE
-    @PostMapping("/create")
+    @PostMapping(path = CREATE_ADDRESS)
     public ResponseEntity<Address> create(@RequestBody Address cv){
         Address result = this.addressService.save(cv);
         return ResponseEntity.created(ServletUriComponentsBuilder.fromCurrentRequest().path("/" +
@@ -32,19 +38,19 @@ public class AddressController {
     }
 
     // READ
-    @GetMapping("/get-all")
+    @GetMapping(path = GET_ALL_ADDRESS)
     public ResponseEntity<Iterable<Address>> getAll(){
         return ResponseEntity.ok(this.addressService.findAll());
     }
 
-    @GetMapping("/get/{id}")
+    @GetMapping(path = GET_CV_ADDRESS_ID)
     public ResponseEntity<Address> findById(@PathVariable long id) {
         Optional<Address> model = this.addressService.findById(id);
         return model.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
     // UPDATE
-//    @PutMapping("update/{id}")
+//    @PutMapping(path = UPDATE_ADDRESS)
 //    public ResponseEntity<Address> updateById(@PathVariable long id, @RequestBody AddressDTO pokemonDTO) {
 //        Optional<Address> optionalModel = this.pokeService.update(pokemonDTO, id);
 //
@@ -52,7 +58,7 @@ public class AddressController {
 //    }
 
     // DELETE
-    @DeleteMapping("/delete/{id}")
+    @DeleteMapping(path = DELETE_ADDRESS)
     public ResponseEntity<Address> delete(@PathVariable long id){
         Optional<Address> updatedPlant = this.addressService.findById(id);
 
@@ -65,4 +71,3 @@ public class AddressController {
     }
 
 }
-

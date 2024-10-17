@@ -14,6 +14,12 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.util.Optional;
 
+import static com.gremlinengine.generator.rest.utility.Paths.CREATE_THEME;
+import static com.gremlinengine.generator.rest.utility.Paths.DELETE_THEME;
+import static com.gremlinengine.generator.rest.utility.Paths.GET_ALL_CV;
+import static com.gremlinengine.generator.rest.utility.Paths.GET_ALL_THEME;
+import static com.gremlinengine.generator.rest.utility.Paths.GET_THEME_BY_ID;
+
 @RestController()
 public class ThemeController {
 
@@ -24,7 +30,7 @@ public class ThemeController {
     }
     
     // CREATE
-    @PostMapping("/create")
+    @PostMapping(path = CREATE_THEME)
     public ResponseEntity<Theme> create(@RequestBody Theme theme){
         Theme result = this.themeService.save(theme);
         return ResponseEntity.created(ServletUriComponentsBuilder.fromCurrentRequest().path("/" +
@@ -32,19 +38,19 @@ public class ThemeController {
     }
 
     // READ
-    @GetMapping("/get-all")
+    @GetMapping(path = GET_ALL_THEME)
     public ResponseEntity<Iterable<Theme>> getAll(){
         return ResponseEntity.ok(this.themeService.findAll());
     }
 
-    @GetMapping("/get/{id}")
+    @GetMapping(path = GET_THEME_BY_ID)
     public ResponseEntity<Theme> findById(@PathVariable long id) {
         Optional<Theme> model = this.themeService.findById(id);
         return model.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
     // UPDATE
-//    @PutMapping("update/{id}")
+//    @PutMapping(path = UPDATE_THEME)
 //    public ResponseEntity<Theme> updateById(@PathVariable long id, @RequestBody ThemeDTO pokemonDTO) {
 //        Optional<Theme> optionalModel = this.pokeService.update(pokemonDTO, id);
 //
@@ -52,7 +58,7 @@ public class ThemeController {
 //    }
 
     // DELETE
-    @DeleteMapping("/delete/{id}")
+    @DeleteMapping(path = DELETE_THEME)
     public ResponseEntity<Theme> delete(@PathVariable long id){
         Optional<Theme> updatedPlant = this.themeService.findById(id);
 
