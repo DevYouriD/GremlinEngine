@@ -4,7 +4,7 @@
 - [ ] Features
   - [x] Add Lombok
   - [ ] Add Swagger
-  - [ ] Implement Continuous Integrations (CI) with Github Actions
+  - [ ] Implement Continuous Integrations (CI) with GitHub Actions
   - [ ] Add ...
   - [ ] Add ...
   - [ ] Add ...
@@ -130,6 +130,15 @@ Streams are a sequence of elements from a data source that supports functional-s
 <!-- ==================================================================================================================================== -->
 
 # Frontend
+
+## Design
+**Description:**  
+Streams are a sequence of elements from a data source that supports functional-style operations to perform aggregate, filter, and transform operations declaratively.
+
+**Links:**  
+[Link](https://www.google.com)
+
+---
 
 ## Angular Material
 **Description:**  
