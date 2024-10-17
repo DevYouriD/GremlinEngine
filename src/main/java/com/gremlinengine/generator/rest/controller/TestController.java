@@ -6,11 +6,11 @@ import org.springframework.web.bind.annotation.RestController;
 import com.gremlinengine.generator.rest.service.CvService;
 
 @RestController()
-public class ExampleController {
+public class TestController {
 
     private final CvService cvService;
 
-    public ExampleController(CvService cvService) {
+    public TestController(CvService cvService) {
         this.cvService = cvService;
     }
 
@@ -29,10 +29,10 @@ public class ExampleController {
         return ResponseEntity.ok("Hello User");
     }
 
-    // EXAMPLE CONTROLLER
+    // TEST ENDPOINT
     @GetMapping("/")
-    public String index(){
-        return "Hello Youri!";
+    public ResponseEntity<String> index(){
+        return ResponseEntity.ok("Hello Youri!");
     }
 
 }
