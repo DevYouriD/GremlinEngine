@@ -1,5 +1,14 @@
 # Welcome to the Template Engine
 
+# General TODO
+- [ ] Features
+  - [x] Add Lombok
+  - [ ] Add Swagger
+  - [ ] Implement Continuous Integrations (CI) with Github Actions
+  - [ ] Add ...
+  - [ ] Add ...
+  - [ ] Add ...
+
 # Keycloak TODO
 - [ ] Features
   - [x] Figure out how keycloak works
@@ -8,11 +17,6 @@
   - [ ] Figure out what (and what else) we can do with it
   - [ ] Enable Keycloak again
   - [ ] Write tests
-
-# General TODO
-- [ ] Features
-  - [ ] Add Lombok
-  - [ ] Add Swagger
 
 - [x] I am done goal example
   - [x] I am done sub-goal example
