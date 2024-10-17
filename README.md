@@ -1,19 +1,22 @@
 # Welcome to the Template Engine
 
-# Keycloak TODO
-- [ ] Features
-  - [ ] Figure out how keycloak works
-  - [ ] Figure out how to implement
-  - [ ] Figure out what (and what else) we can do with it
-
-<br>
-
-![image info](https://img.freepik.com/free-vector/simple-vibing-cat-square-meme_742173-4493.jpg)
-
 # General TODO
 - [ ] Features
-  - [ ] Add Lombok
+  - [x] Add Lombok
   - [ ] Add Swagger
+  - [ ] Implement Continuous Integrations (CI) with GitHub Actions
+  - [ ] Add ...
+  - [ ] Add ...
+  - [ ] Add ...
+
+# Keycloak TODO
+- [ ] Features
+  - [x] Figure out how keycloak works
+  - [x] Figure out how to implement
+  - [x] Write configuration 
+  - [ ] Figure out what (and what else) we can do with it
+  - [ ] Enable Keycloak again
+  - [ ] Write tests
 
 - [x] I am done goal example
   - [x] I am done sub-goal example
@@ -24,10 +27,13 @@ Tool to generate files (for example cv) based on user input.
 ## Index
 
 * [Backend](#backend)
+  * [Functional](#functional) 
     * [Login](#login)
     * [File generating](#file-generating)
     * [Downloadable content](#downloadable-content)
     * [Security](#security)
+  * [Optimization](#optimization)
+    * [Code Quality](#code-quality)
 
 * [Frontend](#frontend)
     * [Design](#design)
@@ -36,6 +42,10 @@ Tool to generate files (for example cv) based on user input.
 * [Tools](#tools)
 
 # Backend
+
+## Functional
+
+---
 
 ## API Instructions
 ### Example Curls
@@ -68,8 +78,6 @@ curl -X DELETE http://localhost:8080/api/delete-cv/1
 Streams are a sequence of elements from a data source that supports functional-style operations to perform aggregate, filter, and transform operations declaratively.
 
 ### Keycloak
-
-
 
 **Links:**  
 [Link](https://www.google.com)
@@ -111,11 +119,33 @@ Streams are a sequence of elements from a data source that supports functional-s
 
 ---
 
+## Optimization
+
+---
+
+## Code Quality
+**Description:**  
+Streams are a sequence of elements from a data source that supports functional-style operations to perform aggregate, filter, and transform operations declaratively.
+
+**Links:**  
+[Link](https://www.google.com)
+
+---
+
 <br>
 
 <!-- ==================================================================================================================================== -->
 
 # Frontend
+
+## Design
+**Description:**  
+Streams are a sequence of elements from a data source that supports functional-style operations to perform aggregate, filter, and transform operations declaratively.
+
+**Links:**  
+[Link](https://www.google.com)
+
+---
 
 ## Angular Material
 **Description:**  
@@ -199,3 +229,5 @@ Cloud
     AWS
 
  -->
+
+![image info](https://img.freepik.com/free-vector/simple-vibing-cat-square-meme_742173-4493.jpg)

@@ -1,34 +1,35 @@
 package com.gremlinengine.generator.rest.service;
 
 import com.gremlinengine.generator.rest.model.Cv;
+import com.gremlinengine.generator.rest.model.Theme;
 import com.gremlinengine.generator.rest.repository.CvRepository;
+import com.gremlinengine.generator.rest.repository.ThemeRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.PutMapping;
 
 import java.util.List;
 import java.util.Optional;
 
 @Service
-public class CvService {
+public class ThemeService {
 
-    private final CvRepository cvRepository;
+    private final ThemeRepository themeRepository;
 
-    public CvService(CvRepository cvRepository) {
-        this.cvRepository = cvRepository;
+    public ThemeService(ThemeRepository themeRepository) {
+        this.themeRepository = themeRepository;
     }
 
     // CREATE
     @Transactional
-    public Cv save(Cv cv) { return cvRepository.save(cv); }
+    public Theme save(Theme theme) { return themeRepository.save(theme); }
 
     // READ
-    public List<Cv> findAll() {
-        return cvRepository.findAll();
+    public List<Theme> findAll() {
+        return themeRepository.findAll();
     }
 
-    public Optional<Cv> findById(long id) {
-        return cvRepository.findById(id);
+    public Optional<Theme> findById(long id) {
+        return themeRepository.findById(id);
     }
 
     // UPDATE
@@ -47,11 +48,11 @@ public class CvService {
 //    }
 
     // DELETE
-    public boolean deleteById(long id) {
-        Optional<Cv> cv = findById(id);
+    public boolean deleteThemeById(long id) {
+        Optional<Theme> theme = findById(id);
 
-        if (cv.isPresent()) {
-            cvRepository.deleteById(id);
+        if (theme.isPresent()) {
+            themeRepository.deleteById(id);
             return true;
         }
         return false;
