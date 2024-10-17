@@ -35,7 +35,7 @@ public class ThemeService {
     // UPDATE
 //    @PutMapping
 //    public Optional<ExampleModel> update(ExampleModelDTO exampleModelDTO, long id) {
-//        Optional<ExampleModel> optionalModel = this.findById(id);
+//        Optional<ExampleModel> optionalModel = findById(id);
 //
 //        if (optionalModel.isPresent()) {
 //            ExampleModel target = optionalModel.get();
@@ -48,8 +48,14 @@ public class ThemeService {
 //    }
 
     // DELETE
-    public void deleteById(long id) {
-        themeRepository.deleteById(id);
+    public boolean deleteThemeById(long id) {
+        Optional<Theme> theme = findById(id);
+
+        if (theme.isPresent()) {
+            themeRepository.deleteById(id);
+            return true;
+        }
+        return false;
     }
 
 }

@@ -16,8 +16,7 @@ import java.util.Optional;
 
 import static com.gremlinengine.generator.rest.utility.Paths.CREATE_ADDRESS;
 import static com.gremlinengine.generator.rest.utility.Paths.DELETE_ADDRESS;
-import static com.gremlinengine.generator.rest.utility.Paths.DELETE_CV;
-import static com.gremlinengine.generator.rest.utility.Paths.GET_ALL_ADDRESS;
+import static com.gremlinengine.generator.rest.utility.Paths.GET_ALL_ADDRESSES;
 import static com.gremlinengine.generator.rest.utility.Paths.GET_CV_ADDRESS_ID;
 
 @RestController()
@@ -32,27 +31,27 @@ public class AddressController {
     // CREATE
     @PostMapping(path = CREATE_ADDRESS)
     public ResponseEntity<Address> create(@RequestBody Address cv){
-        Address result = this.addressService.save(cv);
+        Address result = addressService.save(cv);
         return ResponseEntity.created(ServletUriComponentsBuilder.fromCurrentRequest().path("/" +
                 result.getId()).buildAndExpand(result).toUri()).body(result);
     }
 
     // READ
-    @GetMapping(path = GET_ALL_ADDRESS)
+    @GetMapping(path = GET_ALL_ADDRESSES)
     public ResponseEntity<Iterable<Address>> getAll(){
-        return ResponseEntity.ok(this.addressService.findAll());
+        return ResponseEntity.ok(addressService.findAll());
     }
 
     @GetMapping(path = GET_CV_ADDRESS_ID)
     public ResponseEntity<Address> findById(@PathVariable long id) {
-        Optional<Address> model = this.addressService.findById(id);
+        Optional<Address> model = addressService.findById(id);
         return model.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
     // UPDATE
 //    @PutMapping(path = UPDATE_ADDRESS)
 //    public ResponseEntity<Address> updateById(@PathVariable long id, @RequestBody AddressDTO pokemonDTO) {
-//        Optional<Address> optionalModel = this.pokeService.update(pokemonDTO, id);
+//        Optional<Address> optionalModel = pokeService.update(pokemonDTO, id);
 //
 //        return optionalModel.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
 //    }
@@ -60,14 +59,10 @@ public class AddressController {
     // DELETE
     @DeleteMapping(path = DELETE_ADDRESS)
     public ResponseEntity<Address> delete(@PathVariable long id){
-        Optional<Address> updatedPlant = this.addressService.findById(id);
 
-        if(updatedPlant.isPresent()) {
-            this.addressService.deleteById(id);
-
-            return ResponseEntity.noContent().build();
+        return addressService.deleteById(id) ?
+                ResponseEntity.noContent().build() :
+                ResponseEntity.notFound().build();
         }
-        else { return ResponseEntity.notFound().build(); }
-    }
 
 }

@@ -34,7 +34,7 @@ public class CvService {
     // UPDATE
 //    @PutMapping
 //    public Optional<ExampleModel> update(ExampleModelDTO exampleModelDTO, long id) {
-//        Optional<ExampleModel> optionalModel = this.findById(id);
+//        Optional<ExampleModel> optionalModel = findById(id);
 //
 //        if (optionalModel.isPresent()) {
 //            ExampleModel target = optionalModel.get();
@@ -47,8 +47,14 @@ public class CvService {
 //    }
 
     // DELETE
-    public void deleteById(long id) {
-        cvRepository.deleteById(id);
+    public boolean deleteById(long id) {
+        Optional<Cv> cv = findById(id);
+
+        if (cv.isPresent()) {
+            cvRepository.deleteById(id);
+            return true;
+        }
+        return false;
     }
 
 }

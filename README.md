@@ -33,7 +33,7 @@ Tool to generate files (for example cv) based on user input.
     * [Downloadable content](#downloadable-content)
     * [Security](#security)
   * [Optimization](#optimization)
-    * [Code Quality](#login)
+    * [Code Quality](#code-quality)
 
 * [Frontend](#frontend)
     * [Design](#design)
@@ -79,8 +79,6 @@ Streams are a sequence of elements from a data source that supports functional-s
 
 ### Keycloak
 
-
-
 **Links:**  
 [Link](https://www.google.com)
 
@@ -122,6 +120,15 @@ Streams are a sequence of elements from a data source that supports functional-s
 ---
 
 ## Optimization
+
+---
+
+## Code Quality
+**Description:**  
+Streams are a sequence of elements from a data source that supports functional-style operations to perform aggregate, filter, and transform operations declaratively.
+
+**Links:**  
+[Link](https://www.google.com)
 
 ---
 

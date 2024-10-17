@@ -14,7 +14,7 @@ public final class Paths {
 
     public static final String CREATE_CV = BASE_CV_PATH + "/create";
 
-    public static final String GET_ALL_CV = BASE_CV_PATH + "/get-all";
+    public static final String GET_ALL_CVS = BASE_CV_PATH + "/get-all";
 
     public static final String GET_CV_BY_ID = BASE_CV_PATH + "/get/{id}";
 
@@ -29,7 +29,7 @@ public final class Paths {
 
     public static final String CREATE_ADDRESS = BASE_ADDRESS_PATH + "/create";
 
-    public static final String GET_ALL_ADDRESS = BASE_ADDRESS_PATH + "/get-all";
+    public static final String GET_ALL_ADDRESSES = BASE_ADDRESS_PATH + "/get-all";
 
     public static final String GET_CV_ADDRESS_ID = BASE_ADDRESS_PATH + "/get/{id}";
 
@@ -44,7 +44,7 @@ public final class Paths {
 
     public static final String CREATE_THEME = BASE_THEME_PATH + "/create";
 
-    public static final String GET_ALL_THEME = BASE_THEME_PATH + "/get-all";
+    public static final String GET_ALL_THEMES = BASE_THEME_PATH + "/get-all";
 
     public static final String GET_THEME_BY_ID = BASE_THEME_PATH + "/get/{id}";
 

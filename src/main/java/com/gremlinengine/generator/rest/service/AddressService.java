@@ -35,7 +35,7 @@ public class AddressService {
     // UPDATE
 //    @PutMapping
 //    public Optional<ExampleModel> update(ExampleModelDTO exampleModelDTO, long id) {
-//        Optional<ExampleModel> optionalModel = this.findById(id);
+//        Optional<ExampleModel> optionalModel = findById(id);
 //
 //        if (optionalModel.isPresent()) {
 //            ExampleModel target = optionalModel.get();
@@ -48,8 +48,14 @@ public class AddressService {
 //    }
 
     // DELETE
-    public void deleteById(long id) {
-        addressRepository.deleteById(id);
+    public boolean deleteById(long id) {
+        Optional<Address> address = findById(id);
+
+        if (address.isPresent()) {
+            addressRepository.deleteById(id);
+            return true;
+        }
+        return false;
     }
 
 }

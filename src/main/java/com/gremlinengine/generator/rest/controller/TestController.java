@@ -8,12 +8,6 @@ import com.gremlinengine.generator.rest.service.CvService;
 @RestController()
 public class TestController {
 
-    private final CvService cvService;
-
-    public TestController(CvService cvService) {
-        this.cvService = cvService;
-    }
-
     @GetMapping("/api/hello")
     public ResponseEntity<String> sayHello() {
         return ResponseEntity.ok("Hello");
