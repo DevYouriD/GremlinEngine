@@ -1,6 +1,6 @@
 package com.gremlinengine.generator.rest.controller;
 
-import com.gremlinengine.generator.rest.model.Theme;
+import com.gremlinengine.generator.rest.model.entity.Theme;
 import com.gremlinengine.generator.rest.service.ThemeService;
 import org.springframework.http.ResponseEntity;
 

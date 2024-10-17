@@ -1,6 +1,6 @@
 package com.gremlinengine.generator.rest.controller;
 
-import com.gremlinengine.generator.rest.model.Cv;
+import com.gremlinengine.generator.rest.model.entity.Cv;
 import com.gremlinengine.generator.rest.service.CvService;
 import org.springframework.http.ResponseEntity;
 

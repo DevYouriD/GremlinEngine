@@ -1,6 +1,6 @@
 package com.gremlinengine.generator.rest.controller;
 
-import com.gremlinengine.generator.rest.model.Address;
+import com.gremlinengine.generator.rest.model.entity.Address;
 import com.gremlinengine.generator.rest.service.AddressService;
 import org.springframework.http.ResponseEntity;
 

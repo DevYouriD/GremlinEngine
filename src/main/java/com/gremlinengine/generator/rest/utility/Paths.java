@@ -5,7 +5,7 @@ public final class Paths {
     /**
      * The base of all rest api paths.
      */
-    private static final String BASE_PATH = "/rest/v1";
+    private static final String BASE_PATH = "/api/v1";
 
     /**
      * Cv paths.

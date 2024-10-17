@@ -1,10 +1,9 @@
 package com.gremlinengine.generator.rest.service;
 
-import com.gremlinengine.generator.rest.model.Cv;
+import com.gremlinengine.generator.rest.model.entity.Cv;
 import com.gremlinengine.generator.rest.repository.CvRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.PutMapping;
 
 import java.util.List;
 import java.util.Optional;
