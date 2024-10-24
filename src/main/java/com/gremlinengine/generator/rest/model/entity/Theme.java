@@ -1,21 +1,18 @@
 package com.gremlinengine.generator.rest.model.entity;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.MapsId;
-import jakarta.persistence.OneToOne;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.util.Set;
 
 @Entity
 @Table(name = "theme")
 @Getter @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class Theme {
 
     @Id
@@ -27,9 +24,16 @@ public class Theme {
     @Column(name = "file_name")
     private String fileName;
 
-    @OneToOne(fetch = FetchType.LAZY)
-    @MapsId
-    @JsonBackReference
-    private Cv cv;
+    @OneToMany(mappedBy = "theme", cascade = CascadeType.ALL,  orphanRemoval = true)
+    private Set<Cv> cvs;;
 
+    public void addCv(Cv cv) {
+        cvs.add(cv);
+        cv.setTheme(this);
+    }
+
+    public void deleteCv(Cv cv) {
+        cvs.remove(cv);
+        cv.setTheme(null);
+    }
 }

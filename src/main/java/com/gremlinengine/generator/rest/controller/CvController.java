@@ -2,6 +2,7 @@ package com.gremlinengine.generator.rest.controller;
 
 import com.gremlinengine.generator.rest.model.entity.Cv;
 import com.gremlinengine.generator.rest.service.CvService;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -29,7 +30,9 @@ public class CvController {
     }
 
     // CREATE
-    @PostMapping(path = CREATE_CV)
+    @PostMapping(path = CREATE_CV,
+            consumes = MediaType.APPLICATION_JSON_VALUE,
+            produces = MediaType.APPLICATION_JSON_VALUE )
     public ResponseEntity<Cv> create(@RequestBody Cv cv){
         Cv result = cvService.save(cv);
         return ResponseEntity.created(ServletUriComponentsBuilder.fromCurrentRequest().path("/" +
