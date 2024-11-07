@@ -58,9 +58,15 @@ It also integrates seamlessly with Spring Boot via JPA and Hibernate, making dat
 Additionally, SQL databases offer robust security, backup options, and scalability to manage growing user data while maintaining performance.
 
 ## Identity and access management (login and privileges)
-
+We chose Keycloak to manage login and access for our CV generator because it’s secure, flexible, and easy to integrate with Spring Boot and Angular.
+With Single Sign-On (SSO), users log in once and get access to all features without repeated logins. 
+We’ve set up two roles: user, who can create and edit CVs, and admin, who has extra management controls. 
+Keycloak uses secure tokens for each session, so data stays private, and the centralized dashboard makes managing users and roles easy. 
+This setup keeps our app secure, simplifies login, and prepares us for future growth.
 
 ## Generating the PDFs in the front or back-end.
-Placing CV generation in the backend is often preferred due to better control over formatting, 
-enhanced data privacy, and more consistent performance. Backend generation also supports 
-complex layouts and error handling, which can be challenging for frontend libraries.
+We chose to generate PDFs on the backend because it’s secure, reliable, and easier to scale.
+Doing this on the server means user data stays protected and users don’t need to worry about their device handling big files. 
+It also keeps the design consistent, since the server can apply styles directly, avoiding display issues that might happen across different browsers. 
+Plus, the backend can handle large requests if many PDFs need to be made at once.
+This setup keeps the app running smoothly and securely as we grow.
