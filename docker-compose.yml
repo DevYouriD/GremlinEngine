@@ -28,6 +28,11 @@ services:
     depends_on:
       - postgres
     restart: unless-stopped
+    volumes:
+      - keycloak_data:/opt/keycloak/data
+      - keycloak_logs:/opt/keycloak/logs
 
 volumes:
   postgres_data:
+  keycloak_data:
+  keycloak_logs:
