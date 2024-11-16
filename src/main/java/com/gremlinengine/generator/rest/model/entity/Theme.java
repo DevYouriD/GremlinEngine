@@ -1,9 +1,8 @@
 package com.gremlinengine.generator.rest.model.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.Set;
@@ -11,8 +10,6 @@ import java.util.Set;
 @Entity
 @Table(name = "theme")
 @Getter @Setter
-@AllArgsConstructor
-@NoArgsConstructor
 public class Theme {
 
     @Id
@@ -25,7 +22,8 @@ public class Theme {
     private String fileName;
 
     @OneToMany(mappedBy = "theme", cascade = CascadeType.ALL,  orphanRemoval = true)
-    private Set<Cv> cvs;;
+    @JsonIgnore
+    private Set<Cv> cvs;
 
     public void addCv(Cv cv) {
         cvs.add(cv);

@@ -1,6 +1,5 @@
 package com.gremlinengine.generator.rest.model.entity;
 
-
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.*;
@@ -70,7 +69,7 @@ public class Cv {
     @JsonManagedReference
     private Address address;
 
-    @ManyToOne(cascade = CascadeType.PERSIST, fetch = FetchType.LAZY)
+    @ManyToOne(cascade = CascadeType.PERSIST, fetch = FetchType.EAGER)
     private Theme theme;
 
     @Override
