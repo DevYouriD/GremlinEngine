@@ -34,7 +34,6 @@ public class Address {
     private String postalCode;
 
     @OneToOne(fetch = FetchType.LAZY)
-    @MapsId
     @JsonBackReference
     private Cv cv;
 

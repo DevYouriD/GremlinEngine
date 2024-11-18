@@ -1,5 +1,6 @@
 package com.gremlinengine.generator.rest.controller;
 
+import com.gremlinengine.generator.rest.model.dto.CvDto;
 import com.gremlinengine.generator.rest.model.entity.Cv;
 import com.gremlinengine.generator.rest.service.CvService;
 import org.springframework.http.MediaType;
@@ -9,6 +10,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
@@ -19,6 +21,7 @@ import static com.gremlinengine.generator.rest.utility.Paths.CREATE_CV;
 import static com.gremlinengine.generator.rest.utility.Paths.DELETE_CV;
 import static com.gremlinengine.generator.rest.utility.Paths.GET_ALL_CVS;
 import static com.gremlinengine.generator.rest.utility.Paths.GET_CV_BY_ID;
+import static com.gremlinengine.generator.rest.utility.Paths.UPDATE_CV;
 
 @RestController()
 public class CvController {
@@ -52,12 +55,12 @@ public class CvController {
     }
 
     // UPDATE
-//    @PutMapping(path = UPDATE_CV)
-//    public ResponseEntity<Cv> updateById(@PathVariable long id, @RequestBody CvDTO pokemonDTO) {
-//        Optional<Cv> optionalModel = pokeService.update(pokemonDTO, id);
-//
-//        return optionalModel.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
-//    }
+    @PutMapping(path = UPDATE_CV)
+    public ResponseEntity<Cv> updateById(@PathVariable long id, @RequestBody CvDto cvDto) {
+        Optional<Cv> optionalModel = cvService.update(cvDto, id);
+
+        return optionalModel.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
+    }
 
     // DELETE
     @DeleteMapping(path = DELETE_CV)

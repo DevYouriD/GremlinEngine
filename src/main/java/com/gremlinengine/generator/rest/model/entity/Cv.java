@@ -61,7 +61,7 @@ public class Cv {
 
     private String references;
 
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(cascade = {CascadeType.MERGE, CascadeType.PERSIST}, orphanRemoval = true)
     @JoinColumn(name = "cv_id")
     private List<Link> links = new ArrayList<>();
 
@@ -69,7 +69,7 @@ public class Cv {
     @JsonManagedReference
     private Address address;
 
-    @ManyToOne(cascade = CascadeType.PERSIST, fetch = FetchType.EAGER)
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Theme theme;
 
     @Override

@@ -6,12 +6,19 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
 @Table(name = "link")
+@NoArgsConstructor
 @Getter @Setter
 public class Link {
+
+    public Link(String platform, String url) {
+        this.platform = platform;
+        this.url = url;
+    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
