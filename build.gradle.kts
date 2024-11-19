@@ -57,3 +57,28 @@ dependencies {
 tasks.withType<Test> {
 	useJUnitPlatform()
 }
+
+pmd {
+	toolVersion = "7.7.0"
+	isConsoleOutput = true
+	ruleSets = listOf(
+		"category/java/bestpractices.xml",
+		"category/java/codestyle.xml",
+		"category/java/errorprone.xml",
+		"category/java/design.xml",
+		"category/java/performance.xml",
+		"category/java/documentation.xml"
+	)
+	/* Custom ruleset
+	ruleSetFiles = files("config/pmd/ruleset.xml") // Point to your custom ruleset
+    ruleSets = emptyList() // Clear default rule sets to avoid duplication
+	 */
+}
+
+tasks.withType<Pmd> {
+	reports {
+		html.required.set(true)
+		xml.required.set(false)
+	}
+	ignoreFailures = false
+}
