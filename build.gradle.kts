@@ -5,6 +5,8 @@ val javaVersion = JavaVersion.VERSION_21
 // Quality plugin versions
 val pmdVersion = "7.7.0"
 
+val jacocoVersion = "0.8.12"
+
 // Dependency versions
 val springBootStarterWebVersion = "3.3.5"
 val springBootStarterJpaVersion = "3.3.5"
@@ -22,6 +24,8 @@ plugins {
 	id("org.springframework.boot") version "3.3.5"
 	id("io.spring.dependency-management") version "1.1.6"
 	id("pmd")
+
+	id("jacoco")
 }
 
 group = "com.gremlinengine"
@@ -73,9 +77,7 @@ dependencies {
 	testRuntimeOnly("org.junit.platform:junit-platform-launcher:$junitPlatformLauncherVersion")
 }
 
-tasks.withType<Test> {
-	useJUnitPlatform()
-}
+// Plugin configuration
 
 pmd {
 	toolVersion = pmdVersion
@@ -94,10 +96,36 @@ pmd {
 	 */
 }
 
+jacoco {
+	toolVersion = jacocoVersion
+}
+
+// Task configuration
+
 tasks.withType<Pmd> {
 	reports {
 		html.required.set(true)
 		xml.required.set(false)
 	}
 	ignoreFailures = false
+}
+
+tasks.jacocoTestReport {
+	dependsOn(tasks.withType<Test>())
+	reports {
+		html.required.set(true)
+		xml.required.set(false)
+	}
+
+	doLast {
+		// Print report browser link to console
+		val reportFile = file("${layout.buildDirectory.get().asFile}/reports/jacoco/test/html/index.html")
+		val fileUrl = reportFile.toURI().toString().removePrefix("file:")
+		println("View report at: file:///$fileUrl")
+	}
+}
+
+tasks.withType<Test> {
+	useJUnitPlatform()
+	finalizedBy(tasks.jacocoTestReport)
 }
