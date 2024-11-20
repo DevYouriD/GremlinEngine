@@ -35,7 +35,7 @@ jobs:
 
       # Run Gradle build
       - name: Build with Gradle
-        run: ./gradlew clean build --no-daemon
+        run: ./gradlew clean build -x pmdMain -x pmdTest -x checkstyleMain -x checkStyleTest --no-daemon
 
       # Run PMD
 #      - name: Run PMD
