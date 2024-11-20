@@ -1,9 +1,7 @@
 package com.gremlinengine.generator.rest.service;
 
-import com.gremlinengine.generator.rest.model.Address;
-import com.gremlinengine.generator.rest.model.Cv;
+import com.gremlinengine.generator.rest.model.entity.Address;
 import com.gremlinengine.generator.rest.repository.AddressRepository;
-import com.gremlinengine.generator.rest.repository.CvRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

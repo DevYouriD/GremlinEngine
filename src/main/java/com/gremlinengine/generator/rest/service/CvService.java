@@ -1,13 +1,19 @@
 package com.gremlinengine.generator.rest.service;
 
-import com.gremlinengine.generator.rest.model.Cv;
+import com.gremlinengine.generator.rest.model.dto.CvDto;
+import com.gremlinengine.generator.rest.model.entity.Address;
+import com.gremlinengine.generator.rest.model.entity.Cv;
+import com.gremlinengine.generator.rest.model.entity.Link;
+import com.gremlinengine.generator.rest.model.entity.Theme;
 import com.gremlinengine.generator.rest.repository.CvRepository;
+import com.gremlinengine.generator.rest.utility.CvUtil;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.PutMapping;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class CvService {
@@ -32,19 +38,38 @@ public class CvService {
     }
 
     // UPDATE
-//    @PutMapping
-//    public Optional<ExampleModel> update(ExampleModelDTO exampleModelDTO, long id) {
-//        Optional<ExampleModel> optionalModel = findById(id);
-//
-//        if (optionalModel.isPresent()) {
-//            ExampleModel target = optionalModel.get();
-//            target.setFirstName(exampleModelDTO.firstName());
-//            target.setLastName(exampleModelDTO.lastName());
-//            target.setAge(exampleModelDTO.age());
-//            return Optional.of(exampleRepository.save(target));
-//        }
-//        return Optional.empty();
-//    }
+    @Transactional
+    public Optional<Cv> update(CvDto cvDto, long id) {
+        Optional<Cv> updatedCv = findById(id);
+
+        if (updatedCv.isPresent()) {
+            Cv target = updatedCv.get();
+
+            target.setFirstName(cvDto.firstName());
+            target.setLastName(cvDto.lastName());
+            target.setPhoneNumber(cvDto.phoneNumber());
+            target.setEmailAddress(cvDto.emailAddress());
+            target.setTitle(cvDto.title());
+            target.setPicture(cvDto.picture());
+            target.setAboutMe(cvDto.aboutMe());
+            target.setSkills(cvDto.skills());
+            target.setEducation(cvDto.education());
+            target.setEmploymentHistory(cvDto.employmentHistory());
+            target.setLanguages(cvDto.languages());
+            target.setCertificates(cvDto.certificates());
+            target.setHobbies(cvDto.hobbies());
+            target.setProjects(cvDto.projects());
+            target.setPublications(cvDto.publications());
+            target.setAwards(cvDto.awards());
+            target.setReferences(cvDto.references());
+            CvUtil.handleLinks(cvDto, target);
+            CvUtil.handleAddress(cvDto, target);
+            CvUtil.handleTheme(cvDto, target);
+
+            return Optional.of(cvRepository.save(target));
+        }
+        return Optional.empty();
+    }
 
     // DELETE
     public boolean deleteById(long id) {

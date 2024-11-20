@@ -1,4 +1,8 @@
-# Welcome to the Template Engine
+# Welcome to the Gremlin Engine
+
+This is the backend for the project.
+
+Frontend: https://github.com/ketgjini/GremlinEngineFE
 
 # General TODO
 - [ ] Features
@@ -20,6 +24,9 @@
 
 - [x] I am done goal example
   - [x] I am done sub-goal example
+
+# Roadmap
+A roadmap that lays out a high level plan for the development process of the project can be found [here](./documentation/project_roadmap.md).
 
 ## Description
 Tool to generate files (for example cv) based on user input.

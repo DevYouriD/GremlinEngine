@@ -13,6 +13,4 @@ the second part describes the client configuration.
   - Create test controller endpoints
   - Add Spring Security configuration for the endpoints
   - Update properties file with configuration for Keycloak
-  - Create classe(s) for JWT Conversion
-
-In above list you can note the steps that you took for the keycloak setup.
+  - Create class(es) for JWT Conversion

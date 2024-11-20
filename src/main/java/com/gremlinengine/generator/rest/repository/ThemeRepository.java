@@ -1,6 +1,6 @@
 package com.gremlinengine.generator.rest.repository;
 
-import com.gremlinengine.generator.rest.model.Theme;
+import com.gremlinengine.generator.rest.model.entity.Theme;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
