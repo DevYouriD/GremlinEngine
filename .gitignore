@@ -1,4 +1,3 @@
-.gradle
 build
 .idea
 
@@ -38,5 +37,4 @@ hs_err_pid*
 .metadata/
 
 # Gradle-specific files
-.gradle/
 build/
