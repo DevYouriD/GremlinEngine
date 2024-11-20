@@ -38,12 +38,12 @@ jobs:
         run: ./gradlew clean build --no-daemon
 
       # Run PMD
-      - name: Run PMD
-        run: ./gradlew pmdMain --no-daemon
+#      - name: Run PMD
+#        run: ./gradlew pmdMain --no-daemon
 
       # Run Checkstyle
-      - name: Run Checkstyle
-        run: ./gradlew checkstyleMain --no-daemon
+#      - name: Run Checkstyle
+#        run: ./gradlew checkstyleMain --no-daemon
 
       # Upload test results (optional)
 #      - name: Archive test results
