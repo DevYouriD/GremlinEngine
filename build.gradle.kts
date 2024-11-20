@@ -4,7 +4,7 @@ val javaVersion = JavaVersion.VERSION_21
 
 // Quality plugin versions
 val pmdVersion = "7.7.0"
-
+val checkstyleVersion = "10.20.1"
 val jacocoVersion = "0.8.12"
 
 // Dependency versions
@@ -24,7 +24,7 @@ plugins {
 	id("org.springframework.boot") version "3.3.5"
 	id("io.spring.dependency-management") version "1.1.6"
 	id("pmd")
-
+	id("checkstyle")
 	id("jacoco")
 }
 
@@ -96,6 +96,10 @@ pmd {
 	 */
 }
 
+checkstyle {
+	toolVersion = checkstyleVersion
+}
+
 jacoco {
 	toolVersion = jacocoVersion
 }
@@ -103,6 +107,15 @@ jacoco {
 // Task configuration
 
 tasks.withType<Pmd> {
+	reports {
+		html.required.set(true)
+		xml.required.set(false)
+	}
+	ignoreFailures = false
+}
+
+tasks.withType<Checkstyle> {
+	configFile = file("config/checkstyle/sun_checks.xml")
 	reports {
 		html.required.set(true)
 		xml.required.set(false)
