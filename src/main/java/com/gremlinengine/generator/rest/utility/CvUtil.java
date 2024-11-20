@@ -7,16 +7,17 @@ import com.gremlinengine.generator.rest.model.entity.Link;
 import com.gremlinengine.generator.rest.model.entity.Theme;
 
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 public final class CvUtil {
 
     public static void handleLinks(CvDto cvDto, Cv target) {
+        Map<String, Link> existingLinksMap = target.getLinks().stream()
+                .collect(Collectors.toMap(Link::getPlatform, link -> link));
         List<Link> newLinks = cvDto.links().stream()
                 .map(linkDto -> {
-                    Link existingLink = target.getLinks().stream()
-                            .filter(link -> link.getPlatform().equals(linkDto.getPlatform()))
-                            .findFirst()
-                            .orElse(null);
+                    Link existingLink = existingLinksMap.get(linkDto.getPlatform());
                     if (existingLink != null) {
                         existingLink.setUrl(linkDto.getUrl());
                         return existingLink;
@@ -25,11 +26,6 @@ public final class CvUtil {
                     }
                 })
                 .toList();
-        target.getLinks().removeIf(link ->
-                newLinks.stream().noneMatch(newLink ->
-                        link.getPlatform().equals(newLink.getPlatform())
-                )
-        );
         target.getLinks().clear();
         target.getLinks().addAll(newLinks);
     }
