@@ -1,7 +1,6 @@
-.gradle
 build
+/.gradle
 .idea
-gradle
 
 # Compiled class files
 *.class
@@ -39,5 +38,4 @@ hs_err_pid*
 .metadata/
 
 # Gradle-specific files
-.gradle/
 build/
