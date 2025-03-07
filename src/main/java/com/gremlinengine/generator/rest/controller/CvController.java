@@ -6,6 +6,7 @@ import com.gremlinengine.generator.rest.service.CvService;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -22,6 +23,9 @@ import static com.gremlinengine.generator.rest.utility.Paths.DELETE_CV;
 import static com.gremlinengine.generator.rest.utility.Paths.GET_ALL_CVS;
 import static com.gremlinengine.generator.rest.utility.Paths.GET_CV_BY_ID;
 import static com.gremlinengine.generator.rest.utility.Paths.UPDATE_CV;
+
+//TODO Replace with more secure solution like dedicated corse config class (see CorsConfig.java)
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 
 @RestController()
 public class CvController {
