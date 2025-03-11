@@ -14,8 +14,8 @@ import java.util.Set;
 @Getter @Setter
 public class Theme {
 
-    public Theme(String name, String fileName) {
-        this.name = name;
+    public Theme(String themeName, String fileName) {
+        this.themeName = themeName;
         this.fileName = fileName;
     }
 
@@ -23,7 +23,8 @@ public class Theme {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String name;
+    @Column(name = "theme_name")
+    private String themeName;
 
     @Column(name = "file_name")
     private String fileName;

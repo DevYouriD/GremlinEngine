@@ -52,11 +52,11 @@ public final class CvUtil {
         if (cvDto.theme() != null) {
             Theme theme = target.getTheme();
             if (theme == null) {
-                theme = new Theme(cvDto.theme().getName(), cvDto.theme().getFileName());
+                theme = new Theme(cvDto.theme().getThemeName(), cvDto.theme().getFileName());
                 target.setTheme(theme);
             } else {
-                if (!theme.getName().equals(cvDto.theme().getName())) {
-                    theme.setName(cvDto.theme().getName());
+                if (!theme.getThemeName().equals(cvDto.theme().getThemeName())) {
+                    theme.setThemeName(cvDto.theme().getThemeName());
                 }
                 if (!theme.getFileName().equals(cvDto.theme().getFileName())) {
                     theme.setFileName(cvDto.theme().getFileName());
