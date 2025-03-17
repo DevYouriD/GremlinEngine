@@ -64,6 +64,9 @@ public class Cv {
 
     private String references;
 
+    @Column(name = "keycloak_user_id", unique = true)
+    private String keycloakUserId;
+
     @OneToMany(cascade = {CascadeType.MERGE, CascadeType.PERSIST}, orphanRemoval = true)
     @JoinColumn(name = "cv_id")
     private List<Link> links = new ArrayList<>();
