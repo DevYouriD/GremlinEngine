@@ -1,6 +1,7 @@
 package com.gremlinengine.generator.rest.model.entity;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.gremlinengine.generator.security.EncryptionConverter;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -27,9 +28,11 @@ public class Cv {
     private String lastName;
 
     @Column(name = "phone_number")
+    @Convert(converter = EncryptionConverter.class)
     private String phoneNumber;
 
     @Column(name = "email_address")
+    @Convert(converter = EncryptionConverter.class)
     private String emailAddress;
 
     private String title;
@@ -60,6 +63,9 @@ public class Cv {
     private String awards;
 
     private String references;
+
+    @Column(name = "keycloak_user_id", unique = true)
+    private String keycloakUserId;
 
     @OneToMany(cascade = {CascadeType.MERGE, CascadeType.PERSIST}, orphanRemoval = true)
     @JoinColumn(name = "cv_id")

@@ -1,32 +1,36 @@
 package com.gremlinengine.generator.rest.service;
 
 import com.gremlinengine.generator.rest.model.dto.CvDto;
-import com.gremlinengine.generator.rest.model.entity.Address;
 import com.gremlinengine.generator.rest.model.entity.Cv;
-import com.gremlinengine.generator.rest.model.entity.Link;
-import com.gremlinengine.generator.rest.model.entity.Theme;
 import com.gremlinengine.generator.rest.repository.CvRepository;
 import com.gremlinengine.generator.rest.utility.CvUtil;
+import com.gremlinengine.generator.security.AuthenticatedUserService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.PutMapping;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 @Service
 public class CvService {
 
     private final CvRepository cvRepository;
+    private final AuthenticatedUserService authenticatedUserService;
 
-    public CvService(CvRepository cvRepository) {
+    public CvService(CvRepository cvRepository, AuthenticatedUserService authenticatedUserService) {
         this.cvRepository = cvRepository;
+        this.authenticatedUserService = authenticatedUserService;
     }
 
     // CREATE
     @Transactional
-    public Cv save(Cv cv) { return cvRepository.save(cv); }
+    public Cv save(Cv cv) {
+        String keycloakUserId = authenticatedUserService.getUserId();
+//        String firstName = authenticatedUserService.getFirstName();
+//        String lastName = authenticatedUserService.getLastName();
+//        String email = authenticatedUserService.getEmail();
+        cv.setKeycloakUserId(keycloakUserId);
+        return cvRepository.save(cv); }
 
     // READ
     public List<Cv> findAll() {
