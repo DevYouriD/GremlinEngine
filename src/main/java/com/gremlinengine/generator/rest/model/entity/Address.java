@@ -1,15 +1,12 @@
 package com.gremlinengine.generator.rest.model.entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.gremlinengine.generator.security.EncryptionConverter;
 import jakarta.persistence.Column;
-import jakarta.persistence.Convert;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.MapsId;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.Getter;
@@ -24,19 +21,19 @@ public class Address {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Convert(converter = EncryptionConverter.class)
+//    @Convert(converter = EncryptionConverter.class)
     private String street;
 
-    @Convert(converter = EncryptionConverter.class)
+//    @Convert(converter = EncryptionConverter.class)
     private String city;
 
-    @Convert(converter = EncryptionConverter.class)
+//    @Convert(converter = EncryptionConverter.class)
     private String state;
 
-    @Convert(converter = EncryptionConverter.class)
+//    @Convert(converter = EncryptionConverter.class)
     private String country;
 
-    @Convert(converter = EncryptionConverter.class)
+//    @Convert(converter = EncryptionConverter.class)
     @Column(name = "postal_code")
     private String postalCode;
 

@@ -40,6 +40,7 @@ public class EncryptionUtil {
 
     public String decrypt(String value) {
         try {
+            value = value.replaceAll("\\s", "");
             Cipher cipher = Cipher.getInstance(algorithm);
             cipher.init(Cipher.DECRYPT_MODE, key);
             return new String(cipher.doFinal(Base64.getDecoder().decode(value)));

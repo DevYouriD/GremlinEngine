@@ -6,15 +6,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-@Converter(autoApply = true)
+@Converter
 public class EncryptionConverter implements AttributeConverter<String, String> {
 
     private static EncryptionUtil encryptionUtil;
 
     @Autowired
-    public EncryptionConverter(EncryptionUtil encryptionUtil) {
-        EncryptionConverter.encryptionUtil = encryptionUtil;
-    }
+    public EncryptionConverter(EncryptionUtil encryptionUtil) { }
 
     @Override
     public String convertToDatabaseColumn(String attribute) {
