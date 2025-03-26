@@ -1,4 +1,4 @@
-package com.gremlinengine.generator.security;
+package com.gremlinengine.generator.security.keycloak;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;

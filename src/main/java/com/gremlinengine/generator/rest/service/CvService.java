@@ -4,7 +4,7 @@ import com.gremlinengine.generator.rest.model.dto.CvDto;
 import com.gremlinengine.generator.rest.model.entity.Cv;
 import com.gremlinengine.generator.rest.repository.CvRepository;
 import com.gremlinengine.generator.rest.utility.CvUtil;
-import com.gremlinengine.generator.security.AuthenticatedUserService;
+import com.gremlinengine.generator.security.keycloak.AuthenticatedUserService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

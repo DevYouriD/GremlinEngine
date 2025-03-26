@@ -1,4 +1,4 @@
-package com.gremlinengine.generator.security;
+package com.gremlinengine.generator.security.keycloak;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;

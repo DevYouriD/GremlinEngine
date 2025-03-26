@@ -1,4 +1,4 @@
-package com.gremlinengine.generator.security;
+package com.gremlinengine.generator.security.encryption;
 
 import jakarta.persistence.AttributeConverter;
 import jakarta.persistence.Converter;

@@ -18,7 +18,6 @@ val h2Version = "2.3.232"
 val plantUmlVersion = "8059"
 val springBootStarterTestVersion = "3.4.4"
 val junitPlatformLauncherVersion = "1.12.1"
-val swaggerVersion = "3.0.0"
 
 plugins {
 	java
@@ -54,7 +53,6 @@ dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa:$springBootStarterJpaVersion")
 	implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:$springdocOpenapiStarterWebmvcUiVersion")
 	implementation("org.hibernate.validator:hibernate-validator:$hibernateValidatorVersion")
-	implementation("io.springfox:springfox-boot-starter:$swaggerVersion")
 	developmentOnly("org.springframework.boot:spring-boot-devtools:$springBootDevtoolsVersion")
 	compileOnly("org.projectlombok:lombok:$lombokVersion")
 	annotationProcessor("org.projectlombok:lombok:$lombokVersion")

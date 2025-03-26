@@ -18,11 +18,12 @@ Frontend: https://github.com/ketgjini/GremlinEngineFE
 ---
 
 ## Learning Objectives
-- ✅ Implement Hibernate ORM
-- ✅ Implement Redis caching
-- ✅ Implement Keycloak
+- ✅ Hibernate ORM
+- ✅ Redis caching
+- ✅ Keycloak
 - ✅ Automate services with docker
-- ✅ Implement code quality checks
+- ✅ Code quality checks
+- ✅ SpringDoc OpenAPI (Swagger)
 
 ---
 
@@ -48,6 +49,10 @@ git clone https://github.com/your-username/your-repo.git
 ```bash
 docker-compose up -d
 ```
+
+3. Access the Swagger UI:
+Once the backend is running, you can explore and test the API using Swagger UI at:
+http://localhost:8083/swagger-ui/index.html
 
 ---
 
