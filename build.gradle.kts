@@ -75,6 +75,12 @@ dependencies {
 	// TESTING
 	testImplementation("org.springframework.boot:spring-boot-starter-test:$springBootStarterTestVersion")
 	testRuntimeOnly("org.junit.platform:junit-platform-launcher:$junitPlatformLauncherVersion")
+
+	// Spring Security Testing
+	testImplementation("org.springframework.security:spring-security-test")
+	testImplementation("org.junit.jupiter:junit-jupiter")
+	testImplementation("org.mockito:mockito-core")
+	testImplementation("com.fasterxml.jackson.core:jackson-databind")
 }
 
 // Plugin configuration
