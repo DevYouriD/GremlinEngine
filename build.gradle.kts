@@ -16,8 +16,8 @@ val springBootDevtoolsVersion = "3.4.4"
 val lombokVersion = "1.18.36"
 val h2Version = "2.3.232"
 val plantUmlVersion = "8059"
-val springBootStarterTestVersion = "3.4.4"
-val junitPlatformLauncherVersion = "1.12.1"
+val springBootStarterTestVersion = "3.3.5"
+val junitPlatformLauncherVersion = "1.11.3"
 
 plugins {
 	java
