@@ -17,7 +17,7 @@
   - [ ] Store & manage user session in frontend
 - [ ] Restrict user access in API
   - [ ] Ensure users can only access their own CVs
-  - [ ] Extract `keycloakUserId` from token in API requests
+  - [ ] Extract "keycloakUserId" from token in API requests
   - [ ] Modify database queries to filter CVs by logged-in user
 - [ ] Secure API endpoints fully
   - [ ] Set proper roles and permissions in Keycloak
