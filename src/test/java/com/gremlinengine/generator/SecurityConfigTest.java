@@ -15,7 +15,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @SpringBootTest
 @AutoConfigureMockMvc
-@TestPropertySource(properties = "spring.security.oauth2.resourceserver.jwt.jwk-set-uri=http://mock-server/jwks")
+@TestPropertySource("classpath:application-test.properties")
 public class SecurityConfigTest {
     @Autowired
     private MockMvc mockMvc;
