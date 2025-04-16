@@ -1,4 +1,4 @@
-package com.gremlinengine.generator.security;
+package com.gremlinengine.generator.security.keycloak;
 
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.oauth2.jwt.Jwt;

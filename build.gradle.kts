@@ -8,11 +8,11 @@ val checkstyleVersion = "10.20.1"
 val jacocoVersion = "0.8.12"
 
 // Dependency versions
-val springBootStarterWebVersion = "3.3.5"
-val springBootStarterJpaVersion = "3.3.5"
-val springdocOpenapiStarterWebmvcUiVersion = "2.6.0"
-val hibernateValidatorVersion = "8.0.1.Final"
-val springBootDevtoolsVersion = "3.3.5"
+val springBootStarterWebVersion = "3.4.4"
+val springBootStarterJpaVersion = "3.4.4"
+val springdocOpenapiStarterWebmvcUiVersion = "2.8.6"
+val hibernateValidatorVersion = "9.0.0.CR1"
+val springBootDevtoolsVersion = "3.4.4"
 val lombokVersion = "1.18.36"
 val h2Version = "2.3.232"
 val plantUmlVersion = "8059"
@@ -21,7 +21,7 @@ val junitPlatformLauncherVersion = "1.11.3"
 
 plugins {
 	java
-	id("org.springframework.boot") version "3.3.5"
+	id("org.springframework.boot") version "3.4.4"
 	id("io.spring.dependency-management") version "1.1.6"
 	id("pmd")
 	id("checkstyle")

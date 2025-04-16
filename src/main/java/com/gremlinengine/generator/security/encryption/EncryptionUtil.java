@@ -1,4 +1,4 @@
-package com.gremlinengine.generator.security;
+package com.gremlinengine.generator.security.encryption;
 
 import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Value;

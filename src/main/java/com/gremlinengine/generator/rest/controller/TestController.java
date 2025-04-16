@@ -3,7 +3,6 @@ package com.gremlinengine.generator.rest.controller;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
-import com.gremlinengine.generator.rest.service.CvService;
 
 @RestController()
 public class TestController {
