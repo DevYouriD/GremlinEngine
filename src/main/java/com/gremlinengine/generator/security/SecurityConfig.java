@@ -41,7 +41,7 @@ public class SecurityConfig {
 
     @Bean
     public JwtDecoder jwtDecoder() {
-        return NimbusJwtDecoder.withJwkSetUri("http://localhost:8080/realms/gremlin-engine-realm/protocol/openid-connect/certs").build();
+        return NimbusJwtDecoder.withJwkSetUri("http://localhost:8081/realms/gremlin-engine-realm/protocol/openid-connect/certs").build();
     }
 
 //    @Bean

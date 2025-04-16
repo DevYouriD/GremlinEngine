@@ -9,10 +9,11 @@ import org.springframework.stereotype.Component;
 @Converter
 public class EncryptionConverter implements AttributeConverter<String, String> {
 
-    private static EncryptionUtil encryptionUtil;
+    private final EncryptionUtil encryptionUtil;
 
-    @Autowired
-    public EncryptionConverter(EncryptionUtil encryptionUtil) { }
+    public EncryptionConverter(EncryptionUtil encryptionUtil) {
+        this.encryptionUtil = encryptionUtil;
+    }
 
     @Override
     public String convertToDatabaseColumn(String attribute) {

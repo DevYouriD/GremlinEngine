@@ -4,7 +4,9 @@ import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
+import javax.crypto.BadPaddingException;
 import javax.crypto.Cipher;
+import javax.crypto.IllegalBlockSizeException;
 import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
 import java.util.Base64;
@@ -39,13 +41,18 @@ public class EncryptionUtil {
     }
 
     public String decrypt(String value) {
+        if (value == null || value.trim().isEmpty()) return null;
+
         try {
-            value = value.replaceAll("\\s", "");
+            byte[] decoded = Base64.getDecoder().decode(value);
             Cipher cipher = Cipher.getInstance(algorithm);
             cipher.init(Cipher.DECRYPT_MODE, key);
-            return new String(cipher.doFinal(Base64.getDecoder().decode(value)));
+            return new String(cipher.doFinal(decoded));
+        } catch (IllegalArgumentException | BadPaddingException | IllegalBlockSizeException e) {
+            // return normal value if not encrypted
+            return value;
         } catch (Exception e) {
-            throw new RuntimeException("Error decrypting data", e);
+            throw new RuntimeException("Decryption failed", e);
         }
     }
 
@@ -53,4 +60,5 @@ public class EncryptionUtil {
     public void init() {
         key = new SecretKeySpec(secretKey.getBytes(), algorithm);
     }
+
 }
