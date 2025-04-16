@@ -1,7 +1,7 @@
 package com.gremlinengine.generator.rest.model.entity;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
-import com.gremlinengine.generator.security.EncryptionConverter;
+import com.gremlinengine.generator.security.encryption.EncryptionConverter;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
