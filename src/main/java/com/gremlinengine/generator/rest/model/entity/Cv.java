@@ -1,19 +1,8 @@
 package com.gremlinengine.generator.rest.model.entity;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.Lob;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.OneToOne;
-import jakarta.persistence.Table;
+import com.gremlinengine.generator.security.encryption.EncryptionConverter;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -42,11 +31,11 @@ public class Cv {
     private String lastName;
 
     @Column(name = "phone_number")
-//    @Convert(converter = EncryptionConverter.class)
+    @Convert(converter = EncryptionConverter.class)
     private String phoneNumber;
 
     @Column(name = "email_address")
-//    @Convert(converter = EncryptionConverter.class)
+    @Convert(converter = EncryptionConverter.class)
     private String emailAddress;
 
     private String title;

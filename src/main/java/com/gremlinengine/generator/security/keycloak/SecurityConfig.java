@@ -1,6 +1,7 @@
 package com.gremlinengine.generator.security.keycloak;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -17,9 +18,13 @@ import org.springframework.security.web.SecurityFilterChain;
 @EnableWebSecurity
 public class SecurityConfig {
 
+    @Value("${spring.security.oauth2.resourceserver.jwt.jwk-set-uri}")
+    private String jwkSetUri;
+
     public static final String ADMIN = "admin";
     public static final String USER = "user";
     private final JwtConverter jwtConverter;
+
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.authorizeHttpRequests(authz ->
@@ -41,7 +46,7 @@ public class SecurityConfig {
 
     @Bean
     public JwtDecoder jwtDecoder() {
-        return NimbusJwtDecoder.withJwkSetUri("http://localhost:8080/realms/gremlin-engine-realm/protocol/openid-connect/certs").build();
+        return NimbusJwtDecoder.withJwkSetUri(jwkSetUri).build();
     }
 
 //    @Bean
