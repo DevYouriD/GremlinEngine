@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Resume</title>
+    <link rel="stylesheet" th:href="@{/css/resume.css}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+<div class="resume" id="cv-template">
+    <div class="header-div"></div>
+
+    <div class="left-panel">
+        <div class="profile">
+            <img th:src="@{/images/profile.jpg}" alt="cv" class="img-fluid" style="width: 200px; height: auto;">
+        </div>
+
+        <div class="general-info">
+            <div class="contact">
+                <h3 class="main-title">Contact</h3>
+                <hr class="divider">
+                <p><i class="fas fa-phone-alt"></i> <span th:text="${contact.phone}">123-456-7890</span></p>
+                <p><i class="fas fa-envelope"></i> <span th:text="${contact.email}">hello@reallygreatsite.com</span></p>
+                <p><i class="fas fa-map-marker-alt"></i> <span th:text="${contact.address}">123 Anywhere St., Any City</span></p>
+                <p><i class="fas fa-globe"></i> <span th:text="${contact.website}">reallygreatsite.com</span></p>
+            </div>
+
+            <div class="skills">
+                <h3 class="main-title">Expertise Skills</h3>
+                <hr class="divider">
+                <ul>
+                    <li th:each="skill : ${skills}" th:text="${skill}">Web Design</li>
+                </ul>
+            </div>
+
+            <div class="languages">
+                <h3 class="main-title">Languages</h3>
+                <hr class="divider">
+                <ul>
+                    <li th:each="lang : ${languages}" th:text="${lang}">English</li>
+                </ul>
+            </div>
+
+            <div class="interests">
+                <h3 class="main-title">Interests</h3>
+                <hr class="divider">
+                <ul>
+                    <li><i class="fas fa-camera"></i> Photography</li>
+                    <li><i class="fas fa-plane"></i> Traveling</li>
+                    <li><i class="fas fa-book"></i> Reading</li>
+                    <li><i class="fas fa-music"></i> Music</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="right-panel">
+        <div class="name-title">
+            <h2 class="main-title firstname" th:text="${name}">Chad Gibbons</h2>
+            <p class="main-title" th:text="${title}">Graphic Designer</p>
+        </div>
+
+        <div class="professional-details">
+            <div class="section">
+                <h3 class="main-title">Professional Profile</h3>
+                <p th:text="${profile}">Lorem ipsum...</p>
+            </div>
+
+            <div class="section">
+                <h3 class="main-title">Education</h3>
+                <div class="item" th:each="edu : ${education}">
+                    <h5 th:text="${edu.degree}">Masters in Art and Illustration</h5>
+                    <p th:text="${edu.institution} + ' (' + edu.years + ')'">Really Great University (2012 - 2014)</p>
+                    <ul>
+                        <li th:each="point : ${edu.points}" th:text="${point}">Post graduated in graphic designing</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <h3 class="main-title">Experience</h3>
+                <div class="item" th:each="exp : ${experience}">
+                    <h5 th:text="${exp.company}">Salford & Co.</h5>
+                    <p th:text="${exp.position} + ' (' + exp.dates + ')'">Creative Director (Mar 2018 - Present)</p>
+                    <ul>
+                        <li th:each="resp : ${exp.responsibilities}" th:text="${resp}">Worked on...</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

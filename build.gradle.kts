@@ -57,6 +57,10 @@ dependencies {
 	compileOnly("org.projectlombok:lombok:$lombokVersion")
 	annotationProcessor("org.projectlombok:lombok:$lombokVersion")
 
+	implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
+	implementation("org.xhtmlrenderer:flying-saucer-pdf-openpdf:9.1.22")
+	implementation("org.jsoup:jsoup:1.16.1")
+
 	// SECURITY
 	implementation ("org.springframework.boot:spring-boot-starter-security")
 	implementation("org.springframework.security:spring-security-config")
