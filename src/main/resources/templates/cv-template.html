@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Resume</title>
-    <link rel="stylesheet" th:href="@{/css/resume.css}">
+    <link rel="stylesheet" th:href="@{static/css/resume.css}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -12,7 +12,7 @@
 
     <div class="left-panel">
         <div class="profile">
-            <img th:src="@{/images/profile.jpg}" alt="cv" class="img-fluid" style="width: 200px; height: auto;">
+            <img th:src="'data:image/png;base64,' + ${base64Image}" alt="cv" class="img-fluid" style="width: 200px; height: auto;">
         </div>
 
         <div class="general-info">
