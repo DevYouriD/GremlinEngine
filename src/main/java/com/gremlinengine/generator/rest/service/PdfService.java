@@ -22,7 +22,6 @@ public class PdfService {
     public byte[] generatePdf(String templateName, Context context) throws IOException {
         String htmlContent = templateEngine.process(templateName, context);
 
-        // Clean and prepare HTML using Jsoup
         Document doc = Jsoup.parse(htmlContent, "UTF-8");
         doc.outputSettings().syntax(Document.OutputSettings.Syntax.xml);
         String xhtml = doc.html();
